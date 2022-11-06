@@ -1,10 +1,11 @@
-import { ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
-import React, { useState } from "react";
-import { Colors } from "../../constants/colors";
-import ImagePicker from "./ImagePicker";
+import { ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import React, { useState } from 'react';
+import { Colors } from '../../constants/colors';
+import ImagePicker from './ImagePicker';
+import LocationPicker from './LocationPicker';
 
 const PlaceForm = () => {
-  const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredTitle, setEnteredTitle] = useState('');
 
   const changeTitleHandler = (enteredText) => {
     setEnteredTitle(enteredText);
@@ -20,6 +21,7 @@ const PlaceForm = () => {
           onChangeText={changeTitleHandler}
         />
         <ImagePicker />
+        <LocationPicker />
       </View>
     </ScrollView>
   );
@@ -33,7 +35,7 @@ const styles = StyleSheet.create({
     padding: 24,
   },
   label: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginBottom: 4,
     color: Colors.primary500,
   },
