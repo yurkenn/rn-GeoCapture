@@ -1,12 +1,12 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import AddPlace from "./src/screens/AddPlace";
-import AllPlaces from "./src/screens/AllPlaces";
-import IconButton from "./src/components/UI/IconButton";
-import { Colors } from "./src/constants/colors";
-import Ionicons from "@expo/vector-icons/Ionicons";
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AddPlace from './src/screens/AddPlace';
+import AllPlaces from './src/screens/AllPlaces';
+import IconButton from './src/components/UI/IconButton';
+import { Colors } from './src/constants/colors';
+import Map from './src/screens/Map';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,14 +28,14 @@ export default function App() {
             name="AllPlaces"
             component={AllPlaces}
             options={({ navigation }) => ({
-              title: "Your Favorite Places",
-              headerTitleAlign: "center",
+              title: 'Your Favorite Places',
+              headerTitleAlign: 'center',
               headerRight: ({ tintColor }) => (
                 <IconButton
                   icon="add"
                   size={24}
                   color={tintColor}
-                  onPress={() => navigation.navigate("AddPlaces")}
+                  onPress={() => navigation.navigate('AddPlaces')}
                 />
               ),
             })}
@@ -44,10 +44,11 @@ export default function App() {
             name="AddPlaces"
             component={AddPlace}
             options={{
-              title: "Add a new Place",
-              headerTitleAlign: "center",
+              title: 'Add a new Place',
+              headerTitleAlign: 'center',
             }}
           />
+          <Stack.Screen name="Map" component={Map} />
         </Stack.Navigator>
       </NavigationContainer>
     </>
