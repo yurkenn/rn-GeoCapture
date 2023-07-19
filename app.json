@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "cameraLocation",
-    "slug": "cameraLocation",
+    "name": "rn-expo-Native-Device-Features",
+    "slug": "rn-expo-Native-Device-Features",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -11,9 +11,6 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
@@ -21,7 +18,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#ffffff"
       }
     },
     "web": {
@@ -31,7 +28,8 @@
       [
         "expo-image-picker",
         {
-          "cameraPermission": "The app needs access to your camera to take pictures."
+          "photosPermission": "The app accesses your photos to let you share them with your friends.",
+          "cameraPermission": "The app accesses your camera to let you take photos to share with your friends."
         }
       ]
     ]
