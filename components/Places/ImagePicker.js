@@ -6,7 +6,9 @@ import OutlinedButton from '../ui/OutlinedButton';
 
 const ImagePicker = ({ onTakeImage }) => {
   const [pickedImage, setPickedImage] = useState(null);
+
   const [cameraPermission, requestPermission] = useCameraPermissions();
+
   const verifyPermissions = async () => {
     if (cameraPermission.status === PermissionStatus.UNDETERMINED) {
       const permissionResponse = await requestPermission();
