@@ -8,7 +8,7 @@ import IconButton from './components/ui/IconButton';
 import { Colors } from './constants/colors';
 import Map from './screens/Map';
 import { useEffect, useState } from 'react';
-import { init } from './util/database';
+import { clearAllData, init } from './util/database';
 import AppLoading from 'expo-app-loading';
 import PlaceDetail from './screens/PlaceDetail';
 
@@ -19,6 +19,7 @@ export default function App() {
 
   useEffect(() => {
     init()
+      //clearAllData()
       .then(() => {
         setDbInitialized(true);
       })
