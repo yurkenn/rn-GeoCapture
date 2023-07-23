@@ -7,16 +7,17 @@ import { getAddress, getMapPreview } from '../../util/location';
 import { useNavigation, useRoute, useIsFocused } from '@react-navigation/native';
 
 const LocationPicker = ({ onPickLocation }) => {
-  const route = useRoute();
-  const navigation = useNavigation();
+  const [pickedLocation, setPickedLocation] = useState();
   const isFocused = useIsFocused();
 
-  const [pickedLocation, setPickedLocation] = useState();
+  const route = useRoute();
+  const navigation = useNavigation();
+
   const [permissionStatus, requestPermission] = useForegroundPermissions();
 
   useEffect(() => {
     if (isFocused && route.params) {
-      const mapPickedLocation = route.params && {
+      const mapPickedLocation = {
         lat: route.params.pickedLat,
         lng: route.params.pickedLng,
       };
